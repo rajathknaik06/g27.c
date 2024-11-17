@@ -32,7 +32,7 @@ int main() {
 
     switch (code) {
         case 'A':
-            scanf("%f", &amount);
+            scanf("%f", &amount);     //not applying gst
             printf("%.2f", amount);
             return 0;
 
@@ -45,10 +45,15 @@ int main() {
 
         case 'C':
             scanf("%f", &amount);
-            gst = amount * 0.05;
+            gst = amount * 0.05;                  
             amount = amount - gst;
             printf("%.2f", amount);
-            return 0;
+            return 0;                             /*Code 'C' applies 5% GST:
+
+GST=100.00×0.05=5.00
+Remaining amount:
+100.00−5.00=95.00
+*/
 
         case 'D':
             scanf("%f", &amount);
